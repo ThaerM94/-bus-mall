@@ -1,0 +1,30 @@
+header {
+    overflow: hidden;
+    height: 100px;
+    background-color: chocolate;
+
+}
+
+main {
+    overflow: hidden;
+    background-color: darkred;
+}
+
+#leftSide {
+    width: 25%;
+    overflow: hidden;
+    float: left;
+    height: 2000px;
+    background-color: rgb(248, 175, 85);
+}
+
+section {
+    background-color: rgb(153, 74, 74);
+    float: right;
+    height: 2000px;
+    width: 75%;
+
+}
+
+
+
