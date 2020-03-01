@@ -1,30 +1,93 @@
 header {
     overflow: hidden;
     height: 100px;
-    background-color: chocolate;
+    background-color: rgb(126, 74, 37);
 
 }
 
 main {
     overflow: hidden;
-    background-color: darkred;
+    background-color: rgb(139, 44, 44);
 }
 
 #leftSide {
     width: 25%;
     overflow: hidden;
     float: left;
-    height: 2000px;
+    height: 1000px;
     background-color: rgb(248, 175, 85);
 }
 
 section {
     background-color: rgb(153, 74, 74);
     float: right;
-    height: 2000px;
+    height: 1000px;
     width: 75%;
+    margin-top: -40px;
 
+}
+
+#container img {
+    width: 30%;
+    height: 20%;
+    border: 7px solid  rgb(122, 97, 64);
+}
+
+
+#leftImages {
+    margin-right: 20px;
+
+}
+
+#midImages {
+    margin-right: 20px;
+}
+
+#rightImages {
+    /* margin-right: 15px; */
+
+}
+
+#summary li {
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    list-style-type: square disc;
+}
+
+
+header img {
+    float: left;
+    width: 200px;
+    height: 120px;
+}
+ 
+#p {
+    width: 75%px;
+    height: 700px;
+} 
+
+#p p {
+font-size: 12px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(226, 222, 222);
+    line-height: 40px;
+    word-spacing: 10px;
+    margin-top: 125px;
+    margin-left: 10px;
+    float: right;
 }
 
 
 
+.r {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: x-large;
+    margin-right: 1000px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 120px;
+}
