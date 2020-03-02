@@ -66,15 +66,15 @@ while (leftimg.imagePath === midimg.imagePath || leftimg.imagePath === rightimg.
 leftImages.setAttribute('src',leftimg.imagePath);
 leftImages.setAttribute('alt',leftimg.name);
 leftImages.setAttribute('title',leftimg.name);
-
+leftImages.views++;
 midImages.setAttribute('src',midimg.imagePath);
 midImages.setAttribute('alt',midimg.name);
 midImages.setAttribute('title',midimg.name);
-
+midImages.views++;
 rightImages.setAttribute('src',rightimg.imagePath);
 rightImages.setAttribute('alt',rightimg.name);
 rightImages.setAttribute('title',rightimg.name);
-
+rightImages.views++;
 }
 render();
 
@@ -93,10 +93,8 @@ function handleClickOnMall(event) {
           (event.target.id === 'rightImages') {
             rightimg.clicks++;
           }
+          
           totalClicks++;
-          leftImages.views++;
-          midImages.views++; 
-          rightImages.views++;
           render();
         }
       }  else {
