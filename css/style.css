@@ -14,14 +14,14 @@ main {
     width: 25%;
     overflow: hidden;
     float: left;
-    height: 1000px;
+    height: 2000px;
     background-color: rgb(248, 175, 85);
 }
 
 section {
-    background-color: rgb(153, 74, 74);
+    background-color: rgb(248, 175, 85);
     float: right;
-    height: 1000px;
+    height: 2000px;
     width: 75%;
     margin-top: -40px;
 
@@ -63,12 +63,12 @@ header img {
 } 
 
 #p p {
-font-size: 12px;
+
+    font-size: 18px;
     font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(226, 222, 222);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(247, 8, 8);
     line-height: 40px;
-    word-spacing: 10px;
     margin-top: 125px;
     margin-left: 10px;
     float: right;
@@ -86,4 +86,16 @@ font-size: 12px;
 header h1 {
     text-align: center;
     font-size: 120px;
+}
+
+#chart {
+    background-color:white;
+    height: 300px;
+    width: 100%;
+}
+
+
+footer {
+    background-color: #30475e;
+    width: 100%;
 }
