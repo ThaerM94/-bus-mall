@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use strict';
 
 var names = [
@@ -112,3 +113,5 @@ function render2() {
       result.appendChild(li1);
     }
   }
+=======
+>>>>>>> ef8799a34e55a6c4d240f2c7f86b572651ac8b47
