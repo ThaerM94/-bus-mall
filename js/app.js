@@ -88,15 +88,15 @@ uniqueImg[2] = rightimg.name;
 leftImages.setAttribute('src',leftimg.imagePath);
 leftImages.setAttribute('alt',leftimg.name);
 leftImages.setAttribute('title',leftimg.name);
-leftImages.views++;
+leftimg.views++;
 midImages.setAttribute('src',midimg.imagePath);
 midImages.setAttribute('alt',midimg.name);
 midImages.setAttribute('title',midimg.name);
-midImages.views++;
+midimg.views++;
 rightImages.setAttribute('src',rightimg.imagePath);
 rightImages.setAttribute('alt',rightimg.name);
 rightImages.setAttribute('title',rightimg.name);
-rightImages.views++;
+rightimg.views++;
 }
 render();
 
