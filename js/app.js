@@ -22,10 +22,11 @@ var names = [
     'water-can.jpg',
     'wine-glass.jpg'
 
-]
+];
 
 var totalClicks =0;
-
+var orderForm = document.getElementById("summary");
+var orders = document.getElementById("orders");
 
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -53,8 +54,44 @@ for(var i =0; i<names.length; i++) {
     new mall(names[i]);
 }
 
-var leftimg , midimg , rightimg 
-// var leftBussImg, centerBussImg, rightBussImg;
+function updateProduct () {
+  var elementsString = JSON.stringify(mall.all);
+  localStorage.setItem('name',elementsString);
+}
+
+function getProduct (){
+  var elementsString = localStorage.getItem('name');
+  if(elementsString) {
+    mall.all = JSON.parse(elementsString);
+    
+    handleClickOnMall();
+
+  }
+}
+
+orderForm.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  var element = event.target;
+  var name = element.name.value;
+  var clicks = element.clicks.value;
+  var views = element.views.value;
+  
+
+  new mall(name, clicks, views);
+  // updateProduct();
+  // getProduct();
+  // handleClickOnMall();
+  listForm();
+}
+
+
+
+
+
+var leftimg , midimg , rightimg ;
 var uniqueImg = [] ;
 function render (){
 leftimg = mall.all [randomNumber(0,mall.all.length-1)]
@@ -100,13 +137,7 @@ rightimg.views++;
 }
 render();
 
-// var randomStore =[];
-// var x= leftimg,
-//     y = midimg,
-//     z=rightimg;
 
-
-  
 container.addEventListener('click',handleClickOnMall);
 
 function handleClickOnMall(event) {
@@ -128,41 +159,37 @@ function handleClickOnMall(event) {
           rightImages.views++;
           
           totalClicks++;
+          updateProduct();
           render();
         }
       }  else { 
         alert('you clicked more than 25');
         container.removeEventListener('click',handleClickOnMall);
         randomNumber();
-        render2();
-        render3();
-        
+        listForm();
+        numOfClicks();        
       }
       
     }
-    function render2() {
+    function listForm() {
       var result = document.getElementById('summary');
       for (var i =0; i<mall.all.length ; i++) {
         var li1 = document.createElement('li');
         li1.textContent = `${mall.all[i].name} has ${mall.all[i].clicks} clicks and ${mall.all[i].views} views`;
         result.appendChild(li1);
-        // sumClicks =[mall.all[i].clicks];
         
       }
-    }
-    // render2();
+    }    
     
-    
-    function render3 (){
+    function numOfClicks () {
       var sumClicks =[];
+      var sumViews =[];
     for ( var i=0;i<mall.all.length;i++){
       sumClicks.push(mall.all[i].clicks);
-       
+       sumViews.push(mall.all[i].views);
 
     }
       
-      // var Tclicks =[];
-      // var Tviews =[];
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'bar',
@@ -214,7 +241,54 @@ function handleClickOnMall(event) {
                 'rgba(255, 159, 64, 1)'
               ],
             borderWidth: 1
-          }]
+          },
+          {
+            label: '# of views',
+            data: sumViews,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+                ],
+              borderWidth: 1
+            }]
     },
     options: {
       scales: {
@@ -228,4 +302,5 @@ function handleClickOnMall(event) {
         });
       }
       console.log(myChart);
-      
+      getProduct();
+
