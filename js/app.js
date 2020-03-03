@@ -57,7 +57,6 @@ var leftimg , midimg , rightimg
 // var leftBussImg, centerBussImg, rightBussImg;
 var uniqueImg = [] ;
 function render (){
-<<<<<<< HEAD
 leftimg = mall.all [randomNumber(0,mall.all.length-1)]
 midimg = mall.all [randomNumber(0,mall.all.length-1)]
 rightimg = mall.all [randomNumber(0,mall.all.length-1)]
@@ -98,33 +97,6 @@ rightImages.setAttribute('src',rightimg.imagePath);
 rightImages.setAttribute('alt',rightimg.name);
 rightImages.setAttribute('title',rightimg.name);
 rightImages.views++;
-=======
-
-  
-  leftimg = mall.all [randomNumber(0,mall.all.length-1)]
-  midimg = mall.all [randomNumber(0,mall.all.length-1)]
-  rightimg = mall.all [randomNumber(0,mall.all.length-1)]
-  
-  while (leftimg.imagePath === midimg.imagePath || leftimg.imagePath === rightimg.imagePath || midimg.imagePath === rightimg.imagePath){
-    
-    leftimg = mall.all [randomNumber(0,mall.all.length-1)]
-    midimg = mall.all [randomNumber(0,mall.all.length-1)]
-    rightimg = mall.all [randomNumber(0,mall.all.length-1)] }
-    
-    
-    leftImages.setAttribute('src',leftimg.imagePath);
-    leftImages.setAttribute('alt',leftimg.name);
-    leftImages.setAttribute('title',leftimg.name);
-    leftimg.views++;
-    midImages.setAttribute('src',midimg.imagePath);
-    midImages.setAttribute('alt',midimg.name);
-    midImages.setAttribute('title',midimg.name);
-    midimg.views++;
-    rightImages.setAttribute('src',rightimg.imagePath);
-    rightImages.setAttribute('alt',rightimg.name);
-    rightImages.setAttribute('title',rightimg.name);
-    rightimg.views++;
->>>>>>> lab11-busmall
 }
 render();
 
