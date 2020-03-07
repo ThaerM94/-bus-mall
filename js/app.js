@@ -85,6 +85,7 @@ function handleSubmit(event) {
   // getProduct();
   // handleClickOnMall();
   listForm();
+  chartFun();        
 }
 
 
@@ -167,7 +168,7 @@ function handleClickOnMall(event) {
         container.removeEventListener('click',handleClickOnMall);
         randomNumber();
         listForm();
-        numOfClicks();        
+        chartFun();        
       }
       
     }
@@ -181,7 +182,7 @@ function handleClickOnMall(event) {
       }
     }    
     
-    function numOfClicks () {
+    function chartFun () {
       var sumClicks =[];
       var sumViews =[];
     for ( var i=0;i<mall.all.length;i++){
